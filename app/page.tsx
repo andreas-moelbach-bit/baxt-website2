@@ -75,7 +75,7 @@ export default function Home() {
   );
 }
         <p>Telefon: +47 33 13 27 80</p>
-        <p>Adresse: Hegdalringen 27, 3261 Larvik</p>
+      <p>Adresse: Hegdalringen 27, 3261 Larvik</p>
       </section>
     </main>
   );
