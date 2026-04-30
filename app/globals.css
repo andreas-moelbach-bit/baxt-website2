@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,118 +9,215 @@ body {
   color: #2a1a0f;
 }
 
-.header {
+.hero {
+  min-height: 100vh;
+  padding: 32px 7%;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(29, 14, 5, 0.92), rgba(29, 14, 5, 0.55), rgba(29, 14, 5, 0.2)),
+    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
+
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 8%;
-  background: white;
-  border-bottom: 1px solid #ead7bd;
 }
 
 .logo {
+  font-size: 34px;
   font-weight: 900;
-  font-size: 24px;
+  letter-spacing: -1px;
 }
 
-nav a {
-  margin-left: 28px;
-  color: #2a1a0f;
+.links a {
+  color: white;
   text-decoration: none;
-  font-weight: 600;
+  margin-left: 32px;
+  font-weight: 700;
 }
 
-.hero {
-  padding: 110px 8%;
-  max-width: 900px;
+.heroContent {
+  max-width: 820px;
+  margin-top: 150px;
+  animation: fadeUp 0.9s ease both;
 }
 
-.tag {
+.tag,
+.eyebrow {
   display: inline-block;
-  background: white;
+  color: #8a4b10;
+  background: #fff4df;
   padding: 10px 18px;
   border-radius: 999px;
-  font-weight: 700;
-  color: #8a4b10;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
 }
 
-h1 {
-  font-size: 64px;
-  line-height: 1.05;
+.hero h1 {
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.95;
   margin: 24px 0;
+  letter-spacing: -4px;
 }
 
-h2 {
-  font-size: 42px;
+.hero p {
+  max-width: 650px;
+  font-size: 22px;
+  line-height: 1.55;
+  color: #f7e8d0;
 }
 
-.hero p,
-.section p {
-  font-size: 20px;
-  line-height: 1.6;
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
 }
 
-.button {
+.primary,
+.secondary {
   display: inline-block;
-  margin-top: 28px;
-  background: #7a3f0b;
-  color: white;
-  padding: 16px 26px;
-  border-radius: 14px;
+  padding: 17px 28px;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 900;
+}
+
+.primary {
+  background: #f3a32b;
+  color: #241207;
+}
+
+.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.section,
+.brandsSection,
+.split,
+.contact {
+  padding: 100px 7%;
 }
 
 .section {
-  padding: 80px 8%;
   background: white;
 }
 
-.beige {
-  background: #fbf3e6;
+h2 {
+  font-size: clamp(36px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: 24px 0 48px;
 }
 
-.dark {
-  background: #2a1a0f;
-  color: white;
-}
-
-.grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 24px;
 }
 
 .card {
-  background: #fff8ef;
-  padding: 32px;
-  border-radius: 24px;
+  min-height: 300px;
+  padding: 34px;
+  border-radius: 34px;
+  background: #fff6e8;
   border: 1px solid #ead7bd;
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(74, 37, 10, 0.18);
+}
+
+.card.big {
+  background:
+    linear-gradient(rgba(52, 27, 8, 0.25), rgba(52, 27, 8, 0.7)),
+    url("https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1200&auto=format&fit=crop");
+  background-size: cover;
+  color: white;
+}
+
+.card h3 {
+  font-size: 30px;
+  margin: 0 0 16px;
+}
+
+.card p,
+.split p,
+.contact p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.brandsSection {
+  background: #fbf3e6;
 }
 
 .brands {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
 }
 
 .brands span {
   background: white;
-  padding: 18px 24px;
-  border-radius: 18px;
-  font-weight: 800;
+  padding: 22px 30px;
+  border-radius: 22px;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 12px 35px rgba(74, 37, 10, 0.08);
 }
 
-@media (max-width: 800px) {
-  h1 {
-    font-size: 42px;
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  background: #2a1a0f;
+  color: white;
+}
+
+.contact {
+  text-align: center;
+  background: #f3a32b;
+}
+
+.contact .primary {
+  background: #2a1a0f;
+  color: white;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 850px) {
+  .links {
+    display: none;
   }
 
-  .grid {
+  .heroContent {
+    margin-top: 100px;
+  }
+
+  .cards,
+  .split {
     grid-template-columns: 1fr;
   }
 
-  nav {
-    display: none;
+  .buttons {
+    flex-direction: column;
   }
 }
